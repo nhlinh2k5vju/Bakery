@@ -1,0 +1,65 @@
+body {
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.flower {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    border-radius: 50%;
+    animation: sparkle 2s infinite alternate;
+}
+
+.flower:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: sparkle 2s infinite alternate;
+}
+
+.flower:after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    animation: sparkle 2s infinite alternate;
+}
+
+.stamen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+@keyframes sparkle {
+    from { filter: brightness(100%); }
+    to { filter: brightness(150%); }
+}
